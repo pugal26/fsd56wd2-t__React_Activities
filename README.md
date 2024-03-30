@@ -1,8 +1,13 @@
-# React + Vite
+# Price Card Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Price Card component is a reusable React component designed to display pricing information for different subscription tiers along with their features and buttons. This component is useful for creating pricing pages or sections in web applications.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Display subscription tier type and cost.
+- Display fixed features with ✔ or ✖ symbols based on availability.
+- Enable or disable buttons based on the subscription tier type.
+
+## Usage
+
+- 

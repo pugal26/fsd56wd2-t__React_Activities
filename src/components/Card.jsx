@@ -1,5 +1,4 @@
-import React from 'react'
-import { Feature } from './Feature'
+import Feature from './Feature';
 import './Card.css'
 
 export const Card = (props) => {
