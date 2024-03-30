@@ -1,5 +1,13 @@
+import './App.css'
+import { Header } from './components/Header'
+
 export const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Header />
+      <div className="container">
+
+      </div>
+    </div>
   )
 }
