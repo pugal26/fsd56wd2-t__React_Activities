@@ -1,17 +1,46 @@
+import banner from "../assets/banner.jpg"
 
 export const Header = () => {
   return (
-    <div className="container-fluid">
-        <div className="row">
-            <div className="col-8">
-                <nav className="nav mt-3 mx-3">
-                    <h3 className="mt-1">Shopping Cart</h3>
-                    <a className="nav-link text-body-secondary fs-5" href="#">Home</a>
-                    <a className="nav-link disabled text-body-secondary fs-5" href="#">About</a>
-                    <a className="nav-link dropdown-toggle disabled fs-5" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Shop</a>
-                </nav>
+    <div>
+        {/* Navigation */}
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container px-4 px-lg-5">
+                <a className="navbar-brand" href="#!">Shopping Cart</a>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li className="nav-item"><a className="nav-link active" aria-current="page" href="#!">Home</a></li>
+                        <li className="nav-item"><a className="nav-link" href="#!">About</a></li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a className="dropdown-item" href="#!">All Products</a></li>
+                                <li><hr className="dropdown-divider" /></li>
+                                <li><a className="dropdown-item" href="#!">Popular Items</a></li>
+                                <li><a className="dropdown-item" href="#!">New Arrivals</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form className="d-flex">
+                        <button className="btn btn-outline-dark" type="submit">
+                            <i className="bi-cart-fill me-1"></i>
+                            Cart
+                            <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </nav>
+
+        {/* Header */}
+        <header className="bg-dark py-5">
+            <div className="container px-4 px-lg-5 my-5">
+                <div className="text-center text-white">
+                    <h1 className="display-4 fw-bolder">Shop in style</h1>
+                    <img src={banner} alt="banner" width="100%" />
+                </div>
+            </div>
+        </header>
     </div>
   )
 }
