@@ -8,6 +8,6 @@ The Price Card component is a reusable React component designed to display prici
 - Display fixed features with ✔ or ✖ symbols based on availability.
 - Enable or disable buttons based on the subscription tier type.
 
-## Usage
+## Demo
 
-- 
+- Check out the [live demo](https://pricecardcomp.netlify.app/) to see the Price Card component in action!
