@@ -1,6 +1,6 @@
 import banner from "../assets/banner.jpg"
 
-export const Header = () => {
+export const Header = ({ cart }) => {
   return (
     <div>
         {/* Navigation */}
@@ -25,7 +25,7 @@ export const Header = () => {
                         <button className="btn btn-outline-dark" type="submit">
                             <i className="bi-cart-fill me-1"></i>
                             Cart
-                            <span className="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span className="badge bg-dark text-white ms-1 rounded-pill">{cart.length}</span>
                         </button>
                     </form>
                 </div>
@@ -37,7 +37,6 @@ export const Header = () => {
             <div className="container px-4 px-lg-5 my-5">
                 <div className="text-center text-white">
                     <h1 className="display-4 fw-bolder">Shop in style</h1>
-                    <img src={banner} alt="banner" width="100%" />
                 </div>
             </div>
         </header>

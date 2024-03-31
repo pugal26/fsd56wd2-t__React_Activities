@@ -1,14 +1,17 @@
+import { useState } from 'react'
 import './App.css'
 import { Header } from './components/Header'
 import { Home } from './components/Home'
 
 
 export const App = () => {
+  const [cart, setCart] = useState([]);
+
   return (
     <div>
-      <Header />
+      <Header cart={cart}/>
       <div className="container">
-        <Home />
+        <Home cart={cart} setCart={setCart}/>
       </div>
     </div>
   )
