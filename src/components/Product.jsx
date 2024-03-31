@@ -14,8 +14,8 @@ export const Product = ({ product, cart, setCart }) => {
     <div>
         <section className='py-5'>
         <div className="conatiner mt-5">
-            <div className="row row-cols-xl-5">
-                <div className="col mb-5">
+            <div className="row">
+                <div className="col-xl-3 mb-5">
                     <div className="card h-100">
                         {/* <!-- Product image--> */}
                         <img className="card-img-top" src={product.image} alt="..." />
