@@ -7,10 +7,14 @@ export const Home = ({ cart, setCart }) => {
   const [products] = useState(data);
 
   return (
-    <div className="product-container">
+   
+            <div className="row"> 
+              <div className="product-container">
+
       {products.map((product) => (
         <Product key={product.id} product={product} cart={cart} setCart={setCart}/>
       ))}
+    </div>
     </div>
   );
 };

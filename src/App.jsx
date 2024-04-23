@@ -9,8 +9,9 @@ export const App = () => {
 
   return (
     <div>
-      <Header cart={cart}/>
+    
       <div className="container">
+        <Header cart={cart}/>
         <Home cart={cart} setCart={setCart}/>
       </div>
     </div>

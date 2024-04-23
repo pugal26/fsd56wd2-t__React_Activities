@@ -2,10 +2,11 @@ import banner from "../assets/banner.jpg"
 
 export const Header = ({ cart }) => {
   return (
-    <div>
+    <div className="row">
+        <div className="col">
         {/* Navigation */}
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container px-4 px-lg-5">
+            <div className="px-4 px-lg-5">
                 <a className="navbar-brand" href="#!">Shopping Cart</a>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -30,16 +31,21 @@ export const Header = ({ cart }) => {
                     </form>
                 </div>
             </div>
+        
         </nav>
+
+
 
         {/* Header */}
         <header className="bg-dark py-5">
-            <div className="container px-4 px-lg-5 my-5">
+            <div className="px-4 px-lg-5 my-5">
                 <div className="text-center text-white">
                     <h1 className="display-4 fw-bolder">Shop in style</h1>
                 </div>
             </div>
         </header>
+    </div>
+
     </div>
   )
 }

@@ -11,11 +11,8 @@ export const Product = ({ product, cart, setCart }) => {
     };
 
   return (
-    <div>
-        <section className='py-5'>
-        <div className="conatiner mt-5">
-            <div className="row">
-                <div className="col-xl-3 mb-5">
+ 
+        <div className="col-md-3 mb-5">  
                     <div className="card h-100">
                         {/* <!-- Product image--> */}
                         <img className="card-img-top" src={product.image} alt="..." />
@@ -36,10 +33,8 @@ export const Product = ({ product, cart, setCart }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    </div>
+
+         </div>
+ 
   )
 }
