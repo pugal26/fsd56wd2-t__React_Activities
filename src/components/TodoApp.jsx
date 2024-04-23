@@ -41,14 +41,18 @@ const TodoApp = () => {
 
   return (
     <div className="mt-5">
+      <h1 className='text-center mb-4'>My todo</h1>  
       <TodoForm addTodo={addTodo} editTodo={updateTodo} editedTodo={editedTodo} />
-      <div className="mt-3">
-        <label htmlFor="filter" className="me-2">Filter:</label>
-        <select id="filter" className="form-select" value={filter} onChange={handleFilterChange}>
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="not completed">Not Completed</option>
-        </select>
+      <div className="container mt-5">
+      <h3 className="text-center mb-4">My Todos</h3>
+        <div className="d-flex justify-content-end mb-3">
+            <label htmlFor="filter" className="me-2">Status Filter:</label>
+            <select id="filter" className="form-select" value={filter} onChange={handleFilterChange}>
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="not completed">Not Completed</option>
+            </select>
+        </div>
       </div>
       <hr />
       <TodoList

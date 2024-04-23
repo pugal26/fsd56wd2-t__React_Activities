@@ -32,8 +32,8 @@ const TodoForm = ({ addTodo, editTodo, editedTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="mb-3">
+    <form onSubmit={handleSubmit} className='mb-3'>
+      <div className="input-group my-3 gap-5">
         <input
           type="text"
           className="form-control"
@@ -41,8 +41,6 @@ const TodoForm = ({ addTodo, editTodo, editedTodo }) => {
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
         />
-      </div>
-      <div className="mb-3">
         <input
           type="text"
           className="form-control"
@@ -51,7 +49,9 @@ const TodoForm = ({ addTodo, editTodo, editedTodo }) => {
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+      <div className='text-center'>
       <button type="submit" className="btn btn-primary">{editedTodo ? 'Update Todo' : 'Add Todo'}</button>
+      </div>
     </form>
   );
 };
