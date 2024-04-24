@@ -24,7 +24,7 @@ const Todo = ({ todo, onDelete, onUpdate, onStatusChange, setEditedTodo }) => {
   };
 
   return (
-    <div className="card">
+    <div className="card bg-light border border-3 border-success">
       <div className="card-body">
         <p className="card-text">Name: {todo.taskName}</p>
         <p className="card-text">Description: {todo.description}</p>

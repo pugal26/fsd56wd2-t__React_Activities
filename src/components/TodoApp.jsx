@@ -34,11 +34,6 @@ const TodoApp = () => {
     setFilter(e.target.value);
   };
 
-  // Filter the todos based on the selected filter option
-  const filteredTodos = filter === 'all' ? todos :
-                        filter === 'completed' ? todos.filter(todo => todo.status === 'completed') :
-                        todos.filter(todo => todo.status === 'not completed');
-
   return (
     <div className="mt-5">
       <h1 className='text-center mb-4'>My todo</h1>  
@@ -56,7 +51,9 @@ const TodoApp = () => {
       </div>
       <hr />
       <TodoList
-        todos={filteredTodos}
+        todos={filter === 'all' ? todos :
+        filter === 'completed' ? todos.filter(todo => todo.status === 'completed') :
+        todos.filter(todo => todo.status === 'not completed')}
         onDelete={deleteTodo}
         onUpdate={updateTodo}
         onStatusChange={handleStatusChange}
