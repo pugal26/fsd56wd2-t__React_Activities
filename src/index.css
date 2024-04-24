@@ -1,0 +1,25 @@
+/* styles.css */
+
+.card-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+.selected {
+    color: green; 
+    font-weight: bold;
+  }
+
+/* styles.css */
+
+.card-thumbnail {
+    background-color: #ddd; /* Default background color for the thumbnail */
+    height: 100px; /* Set the height of the thumbnail */
+    width: 100%; /* Ensure the thumbnail takes up the full width */
+    border-radius: 0.25rem; /* Apply rounded corners */
+  }
+  
