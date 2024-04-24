@@ -15,7 +15,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="Java Full Stack Development Course"
-            imageSrc="../src/assets/Career/Card1.webp"
+            imageSrc="../src/assets/C_Card1.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />
@@ -23,7 +23,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="UI/UX Design course"
-            imageSrc="../src/assets/Career/Card4.webp"
+            imageSrc="../src/assets/C_Card4.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />
@@ -31,7 +31,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="Data Science Course"
-            imageSrc="../src/assets/Career/Card3.webp"
+            imageSrc="../src/assets/C_Card3.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />

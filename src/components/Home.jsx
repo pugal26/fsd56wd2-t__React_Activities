@@ -9,19 +9,19 @@ import Career from './Career';
 const Home = () => {
   return (
     <div>
-      <h2 className='text-center'>Full Stack Development</h2>
+      <h2 className='text-center my-4'>Full Stack Development</h2>
       <FullStackDevelopment />
       <hr />
       
-      <h2 className='text-center'>Data Science</h2>
+      <h2 className='text-center my-4'>Data Science</h2>
       <Datascience />
       <hr />
       
-      <h2 className='text-center'>Cyber Security</h2>
+      <h2 className='text-center my-4'>Cyber Security</h2>
       <CyberSecurity />
       <hr />
       
-      <h2 className='text-center'>Career</h2>
+      <h2 className='text-center my-4'>Career</h2>
       <Career />
     </div>
   );
