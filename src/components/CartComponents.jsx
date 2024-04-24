@@ -10,17 +10,34 @@ export const CartItem = ({ item }) => {
     updateCartItemQuantity(item.id, newQuantity);
   };
 
+  // Create an array of options for the dropdown based on available stock
+  const dropdownOptions = [];
+  for (let i = 1; i <= item.stock; i++) {
+    dropdownOptions.push(i);
+  }
+
   return (
-    <div>
-      <p>{item.title}</p>
-      <p>Price: ${item.price}</p>
-      <input
-        type="number"
-        min="1"
-        value={item.quantity}
-        onChange={handleQuantityChange}
-      />
-      <p>Total: ${item.price * item.quantity}</p>
+    <div className="card mb-3">
+      <div className="row g-0">
+        <div className="col-md-4">
+          <img src="..src/assets/thumbnail.png" alt={item.title} className="img-fluid rounded-start" />
+        </div>
+        <div className="col-md-8">
+          <div className="card-body">
+            <h5 className="card-title">{item.title}</h5>
+            <p className="card-text">Brand: {item.brand}</p>
+            <p className="card-text">Description: {item.description}</p>
+            <p className="card-text">Rating: {item.rating}</p>
+            <select value={item.quantity} onChange={handleQuantityChange} className="form-select mb-2">
+              {dropdownOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

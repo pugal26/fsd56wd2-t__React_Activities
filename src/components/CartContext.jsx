@@ -7,6 +7,14 @@ const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  // Initialize cartItems with data from JSON file
+  useState(() => {
+    setCartItems(productData.products.map((product) => ({
+      ...product,
+      quantity: 1, // Initial quantity set to 1
+    })));
+  }, []);
+
   const addItemToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
@@ -25,18 +33,14 @@ export const CartProvider = ({ children }) => {
     setCartItems(updatedCartItems);
   };
 
-  return (
-    <CartContext.Provider
-      value={{
-        cartItems,
-        addItemToCart,
-        removeItemFromCart,
-        updateCartItemQuantity,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+  const contextValue = {
+    cartItems,
+    addItemToCart,
+    removeItemFromCart,
+    updateCartItemQuantity,
+  };
+
+  return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
 };
 
 export const useCart = () => {
