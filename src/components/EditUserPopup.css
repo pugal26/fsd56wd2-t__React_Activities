@@ -1,0 +1,34 @@
+/* EditUserPopup.css */
+.edit-user-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .edit-user-popup-inner {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .edit-user-popup-inner h2 {
+    margin-top: 0;
+  }
+  
+  .edit-user-popup-inner form input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .edit-user-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
