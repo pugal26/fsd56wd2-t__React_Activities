@@ -14,6 +14,12 @@ const AddUserComponent = () => {
   // Function to handle form submission
   const handleSubmit = e => {
     e.preventDefault();
+
+    // Check if all required fields are filled in
+    if (!name || !username || !email || !address || !company) {
+      alert('Please fill in all required fields.');
+      return;
+    }
     const newUser = { name, username, email, address, company };
 
     axios.post('https://jsonplaceholder.typicode.com/users', newUser)
@@ -62,7 +68,7 @@ const AddUserComponent = () => {
                     <input type="text" className="form-control" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
                   </div>
                   <div className="form-group mb-3">
-                    <input type="text" className="form-control" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                    <input type="email" className="form-control" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
                   </div>
                   <div className="form-group mb-3">
                     <input type="text" className="form-control" placeholder="Address" value={address} onChange={e => setAddress(e.target.value)} />
