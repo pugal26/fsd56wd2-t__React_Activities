@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './AddUserComponent.css'; // Import CSS file for styling
+import './AddUserComponent.css';
 
 const AddUserComponent = () => {
   const [name, setName] = useState('');
@@ -39,25 +39,40 @@ const AddUserComponent = () => {
   };
 
   return (
-    <div>
-      <h2>Add User</h2>
-      <button onClick={() => setShowModal(true)}>Add User</button>
+    <div className='text-end m-2'>
+      <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add User</button>
 
       {showModal && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseModal}>&times;</span>
-            <h3>Add User</h3>
-            <form onSubmit={handleSubmit}>
-              <input type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
-              <input type="text" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
-              <input type="text" placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-              <input type="text" placeholder="address" value={address} onChange={e => setAddress(e.target.value)} />
-              <input type="text" placeholder="company" value={company} onChange={e => setCompany(e.target.value)} />
-
-
-              <button type="submit">Add User</button>
-            </form>
+        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Add User</h5>
+                <button type="button" className="close" onClick={handleCloseModal} aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group mb-3">
+                    <input type="text" className="form-control" placeholder="Name" value={name} onChange={e => setName(e.target.value)} />
+                  </div>
+                  <div className="form-group mb-3">
+                    <input type="text" className="form-control" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)} />
+                  </div>
+                  <div className="form-group mb-3">
+                    <input type="text" className="form-control" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
+                  </div>
+                  <div className="form-group mb-3">
+                    <input type="text" className="form-control" placeholder="Address" value={address} onChange={e => setAddress(e.target.value)} />
+                  </div>
+                  <div className="form-group mb-3">
+                    <input type="text" className="form-control" placeholder="Company" value={company} onChange={e => setCompany(e.target.value)} />
+                  </div>
+                  <button type="submit" className="btn btn-primary">Add User</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       )}

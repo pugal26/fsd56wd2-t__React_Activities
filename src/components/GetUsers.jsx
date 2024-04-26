@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import UserDetailsPopup from './UserDetailsPopup'; // Import the UserDetailsPopup component
-import UserDetails from './UserDetails';
-import UpdateUserComponent from './UpdateUser';
-import EditUserPopup from './EditPopUp';
+import UserDetailsPopup from './UserDetailsPopup';
+import EditUserModal from './EditUserModal';
+import DeleteUserComponent from './DeleteUserComponent';
 
 const GetUsersComponent = () => {
   const [data, setData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
-  const [showEditPopup, setShowEditPopup] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editingUser, setEditingUser] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,55 +29,45 @@ const GetUsersComponent = () => {
     setShowPopup(true);
   };
 
+  const handleEdit = item => {
+    setEditingUser(item);
+    setShowEditModal(true);
+  };
+
+  const handleDelete = userId => {
+    // Filter out the deleted user from the data array
+    setData(prevData => prevData.filter(user => user.id !== userId));
+  };
+
   const handleClosePopup = () => {
     setShowPopup(false);
   };
 
-  const handleEditClick = item => {
-    console.log("edit button clicked")
-    setSelectedItem(item);
-    console.log('showEditPopup before:', showEditPopup); // Add this line
-    setShowEditPopup(true);
-    console.log('showEditPopup after:', showEditPopup); // Add this line
+  const handleCloseEditModal = () => {
+    setShowEditModal(false);
+    setEditingUser(null);
   };
 
-  const handleCloseEditPopup = () => {
-    setShowEditPopup(false);
-  };
 
-  const handleUpdate = updatedUser => {
-    setData(data.map(item => (item.id === updatedUser.id ? updatedUser : item)));
-    setShowEditPopup(false);
-    alert('User updated successfully!');
-  };
-
-  return (
-    <div>
-      <h1>API Data</h1>
-      <ul>
+   return (
+    <div className="container">
+      <h1 className="mt-5 mb-4">User Data</h1>
+      <ul className="list-group">
         {data.map(item => (
-          <li key={item.id}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+          <li key={item.id} className="list-group-item">
+            <div className="d-flex align-items-center justify-content-between">
               <h2>{item.name}</h2>
-              <button onClick={() => handleClick(item)}>View</button>
-              <button onClick={() => handleEditClick(item)}>Edit</button> {/* Fix this line */}
+              <div>
+                <button className="btn btn-primary" onClick={() => handleClick(item)}>View</button>
+                <button className="btn btn-warning m-2" onClick={() => handleEdit(item)}>Edit</button>
+                <DeleteUserComponent className="delete-btn" user={item} onDelete={handleDelete} />
+              </div>
             </div>
           </li>
         ))}
       </ul>
-      {showPopup && (
-        <UserDetailsPopup user={selectedItem} onClose={handleClosePopup} />
-      )}
-      {showEditPopup && (
-        <UpdateUserComponent user={selectedItem} onUpdate={handleUpdate} onClose={handleCloseEditPopup} />
-      )}
-      <ul>
-        {data.map(user => (
-          <li key={user.id}>
-            <UserDetails user={user} />
-          </li>
-        ))}
-      </ul>
+      {showPopup && <UserDetailsPopup user={selectedItem} onClose={handleClosePopup} />}
+      {showEditModal && <EditUserModal user={editingUser} onClose={handleCloseEditModal} showEditModal={showEditModal}/>}
     </div>
   );
 };
