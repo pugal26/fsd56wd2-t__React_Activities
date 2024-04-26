@@ -21,9 +21,15 @@ The mock API URL for user data is [https://jsonplaceholder.typicode.com/users](h
 - React development environment set up.
 - Basic knowledge of React and Axios.
 
-## Deliverables
+### Installation
 
+1. Clone this repository to your local machine using:
+2. Navigate to the project directory:
+3. Install dependencies:
 
+### Usage
+
+1. Run the development server:
 2. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
 
 ### Features
