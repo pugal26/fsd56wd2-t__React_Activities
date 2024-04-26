@@ -1,18 +1,18 @@
 // App.js
 import React from 'react';
-import GetUsersComponent from './components/GetUsers';
-import AddUserComponent from './components/AddUsers';
+import GetUsersComponent from './components/GetUsers'; // Importing GetUsersComponent
+import AddUserComponent from './components/AddUsers'; // Importing AddUserComponent
 
 
 const App = () => {
   return (
-    <div>
-      <h1 className='text-center mt-3'>User Management System</h1>
+    <div className='bg-light'>
+      <div className='bg-primary p-2'>
+        <h1 className='text-center'>User Management System</h1>
+      </div>
 
-      <AddUserComponent />
-
-      {/* Display list of users */}
-      <GetUsersComponent />
+      <AddUserComponent /> {/* Rendering AddUserComponent */}
+      <GetUsersComponent /> {/* Rendering GetUsersComponent */}
     </div>
   );
 };

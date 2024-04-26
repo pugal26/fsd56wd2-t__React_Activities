@@ -4,6 +4,7 @@ import React from 'react';
 import axios from 'axios';
 
 const DeleteUserComponent = ({ user, onDelete }) => {
+   // Function to handle user deletion
   const handleDelete = () => {
     const isConfirmed = window.confirm(`Are you sure you want to delete ${user.name}?`);
     if (isConfirmed) {

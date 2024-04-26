@@ -19,7 +19,7 @@ const EditUserModal = ({ user, onClose, showEditModal }) => { // Receive showEdi
       await axios.put(`https://jsonplaceholder.typicode.com/users/${editedUser.id}`, editedUser);
       console.log('User updated successfully');
       alert('User updated successfully!');
-      onClose();
+      onClose(); // Closing edit user modal
     } catch (error) {
       console.error('Error updating user:', error);
     }
@@ -111,6 +111,7 @@ const EditUserModal = ({ user, onClose, showEditModal }) => { // Receive showEdi
   );
 };
 
+// Function to get full address string from address object
 const getFullAddress = (address) => {
     if (!address) return ''; // Return empty string if address is null or undefined
     const { street, suite, city, zipcode } = address;

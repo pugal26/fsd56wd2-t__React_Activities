@@ -3,6 +3,7 @@ import axios from 'axios';
 import './AddUserComponent.css';
 
 const AddUserComponent = () => {
+   // State variables for form inputs and modal visibility
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -10,6 +11,7 @@ const AddUserComponent = () => {
   const [company, setCompany] = useState('');
   const [showModal, setShowModal] = useState(false);
 
+  // Function to handle form submission
   const handleSubmit = e => {
     e.preventDefault();
     const newUser = { name, username, email, address, company };
@@ -25,8 +27,6 @@ const AddUserComponent = () => {
         setAddress('');
         setCompany('');
 
-
-        // Optionally, update UI or fetch users again
       })
       .catch(error => {
         console.error('Error adding user: ', error);
@@ -34,13 +34,14 @@ const AddUserComponent = () => {
       });
   };
 
+  // Function to handle modal close
   const handleCloseModal = () => {
     setShowModal(false);
   };
 
   return (
-    <div className='text-end m-2'>
-      <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add User</button>
+    <div className='text-end m-3'>
+      <button className="btn btn-success" onClick={() => setShowModal(true)}><strong>Click here to Add User</strong></button>
 
       {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" role="dialog">

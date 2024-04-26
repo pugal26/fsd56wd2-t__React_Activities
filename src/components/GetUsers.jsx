@@ -21,8 +21,8 @@ const GetUsersComponent = () => {
       }
     };
 
-    fetchData();
-  }, []);
+    fetchData(); // Calling fetchData function on component mount
+  }, []); // Running useEffect hook only on component mount
 
   const handleClick = item => {
     setSelectedItem(item);
@@ -48,17 +48,17 @@ const GetUsersComponent = () => {
     setEditingUser(null);
   };
 
-
+  // Rendering user data list, user details popup, and edit user modal
    return (
-    <div className="container">
-      <h1 className="mt-5 mb-4">User Data</h1>
+    <div className="container mb-5 bg-light">
+      <h2 className="mt-5 mb-4">User Data</h2>
       <ul className="list-group">
         {data.map(item => (
-          <li key={item.id} className="list-group-item">
-            <div className="d-flex align-items-center justify-content-between">
-              <h2>{item.name}</h2>
+          <li key={item.id} className="list-group-item bg-light">
+            <div className="d-flex align-items-center justify-content-between bg-light">
+              <h4>{item.name}</h4>
               <div>
-                <button className="btn btn-primary" onClick={() => handleClick(item)}>View</button>
+                <button className="btn btn-secondary" onClick={() => handleClick(item)}>View</button>
                 <button className="btn btn-warning m-2" onClick={() => handleEdit(item)}>Edit</button>
                 <DeleteUserComponent className="delete-btn" user={item} onDelete={handleDelete} />
               </div>
