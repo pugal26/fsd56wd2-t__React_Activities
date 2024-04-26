@@ -10,7 +10,7 @@ const DeleteUserComponent = ({ user, onDelete }) => {
     if (isConfirmed) {
       axios.delete(`https://jsonplaceholder.typicode.com/users/${user.id}`)
         .then(response => {
-          console.log(`User ${user.name} deleted successfully`);
+          console.log(`User ${user.name} deleted successfully`, response.data);
           alert('User deleted successfully!');
           onDelete(user.id); // Pass the user id to the parent component for removal
         })

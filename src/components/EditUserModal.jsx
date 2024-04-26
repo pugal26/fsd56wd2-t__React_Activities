@@ -16,10 +16,12 @@ const EditUserModal = ({ user, onClose, showEditModal }) => { // Receive showEdi
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.put(`https://jsonplaceholder.typicode.com/users/${editedUser.id}`, editedUser);
-      console.log('User updated successfully');
+      await axios.put(`https://jsonplaceholder.typicode.com/users/${editedUser.id}`, editedUser)
+      .then(response => {
+      console.log('User updated successfully', response.data);
       alert('User updated successfully!');
       onClose(); // Closing edit user modal
+      })
     } catch (error) {
       console.error('Error updating user:', error);
     }
