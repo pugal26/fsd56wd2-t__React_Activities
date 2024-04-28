@@ -11,6 +11,7 @@ const EditUserModal = ({ user, onClose, showEditModal }) => {
     publicationDate: Yup.string().required('Publication Date is required'),
     authorBirthDate: Yup.string().required('Author Birth Date is required'),
     authorShortBio: Yup.string().required('Author Short Bio is required'),
+    bookImg: Yup.string().required('Book Image URL is required'),
   });
 
   const formik = useFormik({
@@ -21,6 +22,8 @@ const EditUserModal = ({ user, onClose, showEditModal }) => {
       publicationDate: user.publicationDate,
       authorBirthDate: user.authorBirthDate,
       authorShortBio: user.authorShortBio,
+      bookImg: user.bookImg,
+      
     },
     validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
@@ -78,6 +81,78 @@ const EditUserModal = ({ user, onClose, showEditModal }) => {
                     />
                     {formik.touched.author && formik.errors.author && (
                       <div className="invalid-feedback">{formik.errors.author}</div>
+                    )}
+                  </div>
+                  <div className="form-group mb-2">
+                    <label htmlFor="isbnNumber">ISBN Number:</label>
+                    <input
+                      type="text"
+                      className={`form-control ${formik.touched.isbnNumber && formik.errors.isbnNumber ? 'is-invalid' : ''}`}
+                      id="isbnNumber"
+                      name="isbnNumber"
+                      value={formik.values.isbnNumber}
+                      onChange={formik.handleChange}
+                    />
+                    {formik.touched.isbnNumber && formik.errors.isbnNumber && (
+                      <div className="invalid-feedback">{formik.errors.isbnNumber}</div>
+                    )}
+                  </div>
+                  <div className="form-group mb-2">
+                    <label htmlFor="publicationDate">Publication Date:</label>
+                    <input
+                      type="text"
+                      className={`form-control ${formik.touched.publicationDate && formik.errors.publicationDate ? 'is-invalid' : ''}`}
+                      id="publicationDate"
+                      name="publicationDate"
+                      value={formik.values.publicationDate}
+                      onChange={formik.handleChange}
+                    />
+                    {formik.touched.publicationDate && formik.errors.publicationDate && (
+                      <div className="invalid-feedback">{formik.errors.publicationDate}</div>
+                    )}
+                  </div>
+                  <div className="form-group mb-2">
+                    <label htmlFor="authorBirthDate">Author's Birth Date</label>
+                    <input
+                      type="text"
+                      className={`form-control ${formik.touched.authorBirthDate && formik.errors.authorBirthDate ? 'is-invalid' : ''}`}
+                      id="authorBirthDate"
+                      name="authorBirthDate"
+                      value={formik.values.authorBirthDate}
+                      onChange={formik.handleChange}
+                    />
+                    {formik.touched.authorBirthDate && formik.errors.authorBirthDate && (
+                      <div className="invalid-feedback">{formik.errors.authorBirthDate}</div>
+                    )}
+                  </div>
+                  <div className="form-group mb-2">
+                    <label htmlFor="authorShortBio">Author's Short Bio</label>
+                    <textarea
+                      type="text"
+                      className={`form-control ${formik.touched.authorShortBio && formik.errors.authorShortBio ? 'is-invalid' : ''}`}
+                      id="authorShortBio"
+                      name="authorShortBio"
+                      value={formik.values.authorShortBio}
+                      onChange={formik.handleChange}
+                      rows='4'
+                      cols='50'
+                    />
+                    {formik.touched.authorShortBio && formik.errors.authorShortBio && (
+                      <div className="invalid-feedback">{formik.errors.authorShortBio}</div>
+                    )}
+                  </div>
+                  <div className="form-group mb-2">
+                    <label htmlFor="bookImg">Book Image URL</label>
+                    <input
+                      type="text"
+                      className={`form-control ${formik.touched.bookImg && formik.errors.bookImg ? 'is-invalid' : ''}`}
+                      id="bookImg"
+                      name="bookImg"
+                      value={formik.values.bookImg}
+                      onChange={formik.handleChange}
+                    />
+                    {formik.touched.bookImg && formik.errors.bookImg && (
+                      <div className="invalid-feedback">{formik.errors.bookImg}</div>
                     )}
                   </div>
                   {/* Repeat similar structure for other form fields */}

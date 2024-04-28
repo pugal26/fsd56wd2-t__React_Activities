@@ -51,19 +51,19 @@ const GetUsersComponent = () => {
   // Rendering book data list, book details popup, and edit book modal
   return (
     <div className="container mb-5">
-      <h2 className="mt-5 mb-5 text-center">Book Data</h2>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+     <hr />
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mt-3">
         {data.map(item => (
           <div key={item.id} className="col">
             <div className="card">
             <img src={item.bookImg} className="card-img-top" alt={item.title} style={{ height: '400px', objectFit: 'cover' }} />
               <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
+                <h3 className="card-title">{item.title}</h3>
                 <p className="card-text">
                   <span style={{ fontStyle: 'italic' }}>{item.author}</span>
                 </p>
                 <div className="d-flex justify-content-around">
-                  <button className="btn btn-secondary btn-sm" onClick={() => handleClick(item)}>View the Book</button>
+                  <button className="btn btn-info btn-sm" onClick={() => handleClick(item)}>View the Book</button>
                   <button className="btn btn-warning btn-sm" onClick={() => handleEdit(item)}>Edit the Book</button>
                   <DeleteUserComponent user={item} onDelete={handleDelete} />
                 </div>

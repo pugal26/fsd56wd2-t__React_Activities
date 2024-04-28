@@ -14,7 +14,8 @@ const AddUserComponent = () => {
     isbnNumber: '',
     publicationDate: '',
     authorBirthDate: '',
-    authorShortBio: ''
+    authorShortBio: '',
+    bookImg: ''
   };
 
   const validationSchema = Yup.object({
@@ -23,7 +24,8 @@ const AddUserComponent = () => {
     isbnNumber: Yup.string().required('ISBN Number is required'),
     publicationDate: Yup.string().required('Publication Date is required'),
     authorBirthDate: Yup.string().required('Author Birth Date is required'),
-    authorShortBio: Yup.string().required('Author Short Bio is required')
+    authorShortBio: Yup.string().required('Author Short Bio is required'),
+    bookImg: Yup.string().required('Book Image is required')
   });
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
@@ -49,7 +51,7 @@ const AddUserComponent = () => {
 
   return (
     <div className='text-end m-3'>
-      <h6>Click Below to Add a New Book</h6>
+      <h5>Click Below to Add a New Book</h5>
       <button className="btn btn-success" onClick={() => setShowModal(true)}>Click here</button>
 
       {showModal && (
@@ -87,12 +89,16 @@ const AddUserComponent = () => {
                         <ErrorMessage name="publicationDate" component="div" className="error" />
                       </div>
                       <div className="form-group mb-3">
-                        <Field type="text" className="form-control" placeholder="Author Birth Date" name="authorBirthDate" />
+                        <Field type="text" className="form-control" placeholder="Author's Birth Date" name="authorBirthDate" />
                         <ErrorMessage name="authorBirthDate" component="div" className="error" />
                       </div>
                       <div className="form-group mb-3">
-                        <Field type="text" className="form-control" placeholder="Author Short Bio" name="authorShortBio" />
+                        <Field type="text" className="form-control" placeholder="Author's Short Bio" name="authorShortBio" />
                         <ErrorMessage name="authorShortBio" component="div" className="error" />
+                      </div>
+                      <div className="form-group mb-3">
+                        <Field type="text" className="form-control" placeholder="Book Image URL" name="bookImg" />
+                        <ErrorMessage name="bookImg" component="div" className="error" />
                       </div>
                       <button type="submit" className="btn btn-primary" disabled={formik.isSubmitting}>Add Book</button>
                     </Form>

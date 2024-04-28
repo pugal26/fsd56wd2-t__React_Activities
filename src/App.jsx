@@ -7,7 +7,7 @@ import AddUserComponent from './components/AddUsers'; // Importing AddUserCompon
 const App = () => {
   return (
     <div className='bg-light'>
-      <div className='bg-primary p-2'>
+      <div className='bg-dark text-light p-2'>
         <h1 className='text-center'>Library Management System</h1>
       </div>
 
