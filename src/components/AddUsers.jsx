@@ -49,7 +49,8 @@ const AddUserComponent = () => {
 
   return (
     <div className='text-end m-3'>
-      <button className="btn btn-success" onClick={() => setShowModal(true)}><strong>Click here to Add Book</strong></button>
+      <h6>Click Below to Add a New Book</h6>
+      <button className="btn btn-success" onClick={() => setShowModal(true)}>Click here</button>
 
       {showModal && (
         <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1" role="dialog">

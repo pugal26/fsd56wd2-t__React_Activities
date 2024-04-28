@@ -50,22 +50,28 @@ const GetUsersComponent = () => {
 
   // Rendering book data list, book details popup, and edit book modal
   return (
-    <div className="container mb-5 bg-light">
-      <h2 className="mt-5 mb-4">Book Data</h2>
-      <ul className="list-group">
+    <div className="container mb-5">
+      <h2 className="mt-5 mb-5 text-center">Book Data</h2>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
         {data.map(item => (
-          <li key={item.id} className="list-group-item bg-light">
-            <div className="d-flex align-items-center justify-content-between bg-light">
-              <h5>{item.title}</h5>
-              <div>
-                <button className="btn btn-secondary" onClick={() => handleClick(item)}>View</button>
-                <button className="btn btn-warning m-2" onClick={() => handleEdit(item)}>Edit</button>
-                <DeleteUserComponent className="delete-btn" user={item} onDelete={handleDelete} />
+          <div key={item.id} className="col">
+            <div className="card">
+            <img src={item.bookImg} className="card-img-top" alt={item.title} style={{ height: '400px', objectFit: 'cover' }} />
+              <div className="card-body">
+                <h5 className="card-title">{item.title}</h5>
+                <p className="card-text">
+                  <span style={{ fontStyle: 'italic' }}>{item.author}</span>
+                </p>
+                <div className="d-flex justify-content-around">
+                  <button className="btn btn-secondary btn-sm" onClick={() => handleClick(item)}>View the Book</button>
+                  <button className="btn btn-warning btn-sm" onClick={() => handleEdit(item)}>Edit the Book</button>
+                  <DeleteUserComponent user={item} onDelete={handleDelete} />
+                </div>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
       {showPopup && <UserDetailsPopup book={selectedItem} onClose={handleClosePopup} />}
       {showEditModal && <EditUserModal user={editingUser} onClose={handleCloseEditModal} showEditModal={showEditModal}/>}
     </div>
