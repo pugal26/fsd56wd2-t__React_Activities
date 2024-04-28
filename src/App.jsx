@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className='bg-light'>
       <div className='bg-primary p-2'>
-        <h1 className='text-center'>User Management System</h1>
+        <h1 className='text-center'>Library Management System</h1>
       </div>
 
       <AddUserComponent /> {/* Rendering AddUserComponent */}

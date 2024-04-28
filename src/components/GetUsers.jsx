@@ -14,7 +14,7 @@ const GetUsersComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const response = await axios.get('https://662e11e8a7dda1fa378bf577.mockapi.io/api/v1/books');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -34,9 +34,9 @@ const GetUsersComponent = () => {
     setShowEditModal(true);
   };
 
-  const handleDelete = userId => {
-    // Filter out the deleted user from the data array
-    setData(prevData => prevData.filter(user => user.id !== userId));
+  const handleDelete = bookId => {
+    // Filter out the deleted book from the data array
+    setData(prevData => prevData.filter(book => book.id !== bookId));
   };
 
   const handleClosePopup = () => {
@@ -48,15 +48,15 @@ const GetUsersComponent = () => {
     setEditingUser(null);
   };
 
-  // Rendering user data list, user details popup, and edit user modal
-   return (
+  // Rendering book data list, book details popup, and edit book modal
+  return (
     <div className="container mb-5 bg-light">
-      <h2 className="mt-5 mb-4">User Data</h2>
+      <h2 className="mt-5 mb-4">Book Data</h2>
       <ul className="list-group">
         {data.map(item => (
           <li key={item.id} className="list-group-item bg-light">
             <div className="d-flex align-items-center justify-content-between bg-light">
-              <h4>{item.name}</h4>
+              <h4>{item.title}</h4>
               <div>
                 <button className="btn btn-secondary" onClick={() => handleClick(item)}>View</button>
                 <button className="btn btn-warning m-2" onClick={() => handleEdit(item)}>Edit</button>
@@ -66,11 +66,10 @@ const GetUsersComponent = () => {
           </li>
         ))}
       </ul>
-      {showPopup && <UserDetailsPopup user={selectedItem} onClose={handleClosePopup} />}
+      {showPopup && <UserDetailsPopup book={selectedItem} onClose={handleClosePopup} />}
       {showEditModal && <EditUserModal user={editingUser} onClose={handleCloseEditModal} showEditModal={showEditModal}/>}
     </div>
   );
 };
-
 
 export default GetUsersComponent;
