@@ -1,10 +1,12 @@
 // CartPage.js
 import React from 'react';
-import { useCart } from './CartContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItemToCart, removeItemFromCart, updateCartItemQuantity } from './cartSlice';
 import { CartItem, TotalCartSummary } from './CartComponents';
 
 const CartPage = () => {
-  const { cartItems } = useCart();
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const calculateSubTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

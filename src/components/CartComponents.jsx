@@ -1,13 +1,14 @@
 // CartComponents.js
 import React from 'react';
-import { useCart } from './CartContext';
+import { useDispatch } from 'react-redux';
+import { updateCartItemQuantity } from './cartSlice';
 
 export const CartItem = ({ item }) => {
-  const { updateCartItemQuantity } = useCart();
+  const dispatch = useDispatch();
 
   const handleQuantityChange = (event) => {
     const newQuantity = parseInt(event.target.value);
-    updateCartItemQuantity(item.id, newQuantity);
+    dispatch(updateCartItemQuantity({ itemId: item.id, newQuantity }));
   };
 
   // Create an array of options for the dropdown based on available stock
@@ -43,7 +44,7 @@ export const CartItem = ({ item }) => {
 };
 
 export const TotalCartSummary = () => {
-  const { cartItems } = useCart();
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
   const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
