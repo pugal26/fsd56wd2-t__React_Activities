@@ -56,7 +56,7 @@ const GetUsersComponent = () => {
         {data.map(item => (
           <li key={item.id} className="list-group-item bg-light">
             <div className="d-flex align-items-center justify-content-between bg-light">
-              <h4>{item.title}</h4>
+              <h5>{item.title}</h5>
               <div>
                 <button className="btn btn-secondary" onClick={() => handleClick(item)}>View</button>
                 <button className="btn btn-warning m-2" onClick={() => handleEdit(item)}>Edit</button>

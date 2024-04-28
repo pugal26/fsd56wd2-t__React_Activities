@@ -13,8 +13,8 @@ const AddUserComponent = () => {
     author: '',
     isbnNumber: '',
     publicationDate: '',
-    birthDate: '',
-    shortBio: ''
+    authorBirthDate: '',
+    authorShortBio: ''
   };
 
   const validationSchema = Yup.object({
@@ -22,8 +22,8 @@ const AddUserComponent = () => {
     author: Yup.string().required('Author is required'),
     isbnNumber: Yup.string().required('ISBN Number is required'),
     publicationDate: Yup.string().required('Publication Date is required'),
-    birthDate: Yup.string().required('Birth Date is required'),
-    shortBio: Yup.string().required('Short Bio is required')
+    authorBirthDate: Yup.string().required('Author Birth Date is required'),
+    authorShortBio: Yup.string().required('Author Short Bio is required')
   });
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
@@ -86,12 +86,12 @@ const AddUserComponent = () => {
                         <ErrorMessage name="publicationDate" component="div" className="error" />
                       </div>
                       <div className="form-group mb-3">
-                        <Field type="text" className="form-control" placeholder="Birth Date" name="birthDate" />
-                        <ErrorMessage name="birthDate" component="div" className="error" />
+                        <Field type="text" className="form-control" placeholder="Author Birth Date" name="authorBirthDate" />
+                        <ErrorMessage name="authorBirthDate" component="div" className="error" />
                       </div>
                       <div className="form-group mb-3">
-                        <Field type="text" className="form-control" placeholder="Short Bio" name="shortBio" />
-                        <ErrorMessage name="shortBio" component="div" className="error" />
+                        <Field type="text" className="form-control" placeholder="Author Short Bio" name="authorShortBio" />
+                        <ErrorMessage name="authorShortBio" component="div" className="error" />
                       </div>
                       <button type="submit" className="btn btn-primary" disabled={formik.isSubmitting}>Add Book</button>
                     </Form>

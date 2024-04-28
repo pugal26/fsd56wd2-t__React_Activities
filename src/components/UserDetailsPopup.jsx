@@ -11,8 +11,8 @@ const UserDetailsPopup = ({ book, onClose }) => {
         <p className="text-dark">Author: {book.author}</p>
         <p className="text-dark">ISBN: {book.isbnNumber}</p>
         <p className="text-dark">Publication Date: {book.publicationDate}</p>
-        <p className="text-dark">Author's Birth Date: {book.birthDate}</p>
-        <p className="text-dark">Short Bio: {book.shortBio}</p>
+        <p className="text-dark">Author's Birth Date: {book.authorBirthDate}</p>
+        <p className="text-dark">Author Short Bio: {book.authorShortBio}</p>
         <button className="btn btn-primary" onClick={onClose}>Close</button>
       </div>
     </div>
