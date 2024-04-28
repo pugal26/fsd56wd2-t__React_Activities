@@ -1,45 +1,40 @@
-# React Axios Task
+# Library Management System
 
-This project is a React application that allows for CRUD operations with user data using React and Axios fetch to interact with a mock API.
+This is a simple library management system built with React.js. It allows users to view, edit, and delete books from the library.
 
-## Task Description
+## Features
 
-The goal is to create a React App that:
+- View all books in the library with details
+- Edit book details
+- Delete books from the library
+- View detailed information about each book in a popup modal
 
-- Displays all the existing API data in UI using Axios.
-- Allows users to perform CRUD operations on user data, including adding, editing, and deleting user records.
-- Stores the user data in a mock API that can be accessed using Axios fetch.
-- Has a clean and responsive design that is easy to use and navigate.
+## Installation
 
-## Mock API URL
+1. Clone the repository:
 
-The mock API URL for user data is [https://jsonplaceholder.typicode.com/users](https://jsonplaceholder.typicode.com/users)
+   ```bash
+   git clone <repository-url>
+   ```
+2. cd library-management-system
+3. npm install
+4. npm start
+5. Open http://localhost:3000 to view the app in the browser.
 
-## Requirements
+## Usage
 
-- Node.js and npm installed on your local machine.
-- React development environment set up.
-- Basic knowledge of React and Axios.
+- Once the app is running, you can view all the books in the library on the homepage.
+- Click on the "View the Book" button to see detailed information about a book in a popup modal.
+- Click on the "Edit the Book" button to edit the details of a book.
+- Click on the "Delete the Book" button to delete a book from the library.
 
-### Installation
+## Deployment
 
-1. Clone this repository to your local machine using:
-2. Navigate to the project directory:
-3. Install dependencies:
+The project is deployed on Netlify. You can access it [Library Management System](https://librarymange-2803.netlify.app/).
 
-### Usage
+## Technologies Used
 
-1. Run the development server:
-2. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
-
-### Features
-
-- Display all existing user data fetched from the mock API.
-- Add new user records.
-- Edit existing user records.
-- Delete user records.
-- Clean and responsive UI design.
-
-### Deployment
-
-This application is deployed on [https://day26-03--userslist-2603.netlify.app/](https://day26-03--userslist-2603.netlify.app/).
+- React.js
+- Axios
+- Formik
+- Bootstrap
