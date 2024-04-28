@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 
-const EditUserModal = ({ user, onClose, showEditModal }) => {
+const EditBookModal = ({ book, onClose, showEditModal }) => {
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
     author: Yup.string().required('Author is required'),
@@ -16,21 +16,21 @@ const EditUserModal = ({ user, onClose, showEditModal }) => {
 
   const formik = useFormik({
     initialValues: {
-      title: user.title,
-      author: user.author,
-      isbnNumber: user.isbnNumber,
-      publicationDate: user.publicationDate,
-      authorBirthDate: user.authorBirthDate,
-      authorShortBio: user.authorShortBio,
-      bookImg: user.bookImg,
+      title: book.title,
+      author: book.author,
+      isbnNumber: book.isbnNumber,
+      publicationDate: book.publicationDate,
+      authorBirthDate: book.authorBirthDate,
+      authorShortBio: book.authorShortBio,
+      bookImg: book.bookImg,
       
     },
     validationSchema,
     onSubmit: async (values, { setSubmitting }) => {
       try {
-        await axios.put(`https://662e11e8a7dda1fa378bf577.mockapi.io/api/v1/books/${user.id}`, values)
+        await axios.put(`https://662e11e8a7dda1fa378bf577.mockapi.io/api/v1/books/${book.id}`, values)
         .then(response => {
-        console.log('User updated successfully', response.data);
+        console.log('Book updated successfully', response.data);
         alert('Book updated successfully!');
         onClose();
       })
@@ -172,4 +172,4 @@ const EditUserModal = ({ user, onClose, showEditModal }) => {
   );
 };
 
-export default EditUserModal;
+export default EditBookModal;

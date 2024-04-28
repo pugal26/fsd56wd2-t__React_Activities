@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserDetailsPopup = ({ book, onClose }) => {
+const BookDetailsPopup = ({ book, onClose }) => {
   if (!book) return null; // Add a check to handle when book object is undefined
 
   return (
@@ -28,4 +28,4 @@ const UserDetailsPopup = ({ book, onClose }) => {
   );
 };
 
-export default UserDetailsPopup;
+export default BookDetailsPopup;

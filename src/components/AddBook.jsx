@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './AddUserComponent.css';
+import './AddBook.css';
 
-const AddUserComponent = () => {
+const AddBook = () => {
   // State variables for form inputs and modal visibility
   const [showModal, setShowModal] = useState(false);
 
@@ -113,4 +113,4 @@ const AddUserComponent = () => {
   );
 };
 
-export default AddUserComponent;
+export default AddBook;

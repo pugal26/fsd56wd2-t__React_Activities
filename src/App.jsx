@@ -1,7 +1,7 @@
 // App.js
 import React from 'react';
-import GetUsersComponent from './components/GetUsers'; // Importing GetUsersComponent
-import AddUserComponent from './components/AddUsers'; // Importing AddUserComponent
+import AddBook from './components/AddBook'; 
+import GetBook from './components/GetBook'; 
 
 
 const App = () => {
@@ -11,8 +11,8 @@ const App = () => {
         <h1 className='text-center'>Library Management System</h1>
       </div>
 
-      <AddUserComponent /> {/* Rendering AddUserComponent */}
-      <GetUsersComponent /> {/* Rendering GetUsersComponent */}
+      <AddBook /> {/* Rendering AddBookComponent */}
+      <GetBook /> {/* Rendering GetBookComponent */}
     </div>
   );
 };
