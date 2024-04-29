@@ -30,7 +30,7 @@ This is a simple library management system built with React.js. It allows users 
 
 ## Deployment
 
-The project is deployed on Netlify. You can access it [Library Management System](https://librarymange-2803.netlify.app/).
+The project is deployed on Netlify. You can access it [Library Management System](https://librarysystem-2803.netlify.app/).
 
 ## Technologies Used
 
