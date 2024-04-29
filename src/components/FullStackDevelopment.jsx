@@ -14,7 +14,7 @@ const FullStackDevelopment = () => {
           <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/08/Feature-image-Best-Full-Stack-Development-Online-Courses.webp" title="7 Best Full-Stack Development Online Courses [2024]" />
         </div>
         <div className="col">
-          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2021/05/react-768x402.jpg" title="6 Essential Prerequisites For Learning ReactJS" />
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2024/02/full_stack_developer_roadmap_in_2024.webp" title="Full Stack Developer Roadmap: A Complete Guide [2024]" />
         </div>
       </div>
     </div>

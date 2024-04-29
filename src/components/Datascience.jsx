@@ -11,10 +11,10 @@ const DataScience = () => {
           <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/11/Feature-image-Top-High-Paying-Non-Coding-Jobs-in-Data-Science.webp" title="Top 10 High Paying Non-Coding Jobs in Data Science in 2024"/>
         </div>
         <div className="col">
-          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2022/06/Your-paragraph-text-2048x1024.png" title="Data Science vs Data Analytics | Best Career Choice in 2024"/>
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/07/Real-World-Data-Science-Examples-2048x1072.webp" title="12 Real-World Data Science Examples: Power Of Data Science"/>
         </div>
         <div className="col">
-          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/07/image-4.png" title="Roles and Responsibilities of a Data Scientist"/>
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/09/Feature-image-Top-Product-Based-Companies-for-Data-Scientists.webp" title="Top Product-Based Companies for Data Scientists in 2024"/>
         </div>
       </div>
   </div>
