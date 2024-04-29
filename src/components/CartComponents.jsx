@@ -20,7 +20,7 @@ export const CartItem = ({ item }) => {
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
-          <img src="..src/assets/thumbnail.png" alt={item.title} className="img-fluid rounded-start" />
+          <img src="https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111864_iphonex.png" alt={item.title} className="img-fluid rounded-start mt-2" />
         </div>
         <div className="col-md-8">
           <div className="card-body">

@@ -29,7 +29,7 @@ const CartPage = () => {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mt-2">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">Order Total Value</h5><hr/>
