@@ -3,7 +3,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { updateCartItemQuantity } from './cartSlice';
 
-export const CartItem = ({ item }) => {
+export const CartItem = ({ item, onRemoveItemClick  }) => {
   const dispatch = useDispatch();
 
   const handleQuantityChange = (event) => {
@@ -21,7 +21,7 @@ export const CartItem = ({ item }) => {
     <div className="card mb-3">
       <div className="row g-0">
         <div className="col-md-4">
-          <img src="..src/assets/thumbnail.png" alt={item.title} className="img-fluid rounded-start" />
+          <img src="https://admin.hyperce.io/assets/1__12__preview.jpg?w=800" alt={item.title} className="img-fluid rounded-start" />
         </div>
         <div className="col-md-8">
           <div className="card-body">
@@ -36,6 +36,9 @@ export const CartItem = ({ item }) => {
                 </option>
               ))}
             </select>
+            <div className='d-grid gap-2 d-md-flex justify-content-md-end'>
+            <button onClick={() => onRemoveItemClick(item.id)} className="btn text-danger">Remove</button>
+            </div>
           </div>
         </div>
       </div>
