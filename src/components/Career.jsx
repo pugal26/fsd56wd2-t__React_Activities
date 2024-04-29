@@ -15,7 +15,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="Java Full Stack Development Course"
-            imageSrc="../src/assets/C_Card1.webp"
+            imageSrc="https://static.guvi.in/blog/zenThumbnail/java-fsd.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />
@@ -23,7 +23,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="UI/UX Design course"
-            imageSrc="../src/assets/C_Card4.webp"
+            imageSrc="https://static.guvi.in/blog/zenThumbnail/ui-ux.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />
@@ -31,7 +31,7 @@ const Career = () => {
         <div className="col">
           <CareerCard
             title="Data Science Course"
-            imageSrc="../src/assets/C_Card3.webp"
+            imageSrc="https://static.guvi.in/blog/zenThumbnail/data-science.webp"
             button1Text="ENGLISH"
             button2Text="TAMIL"
           />

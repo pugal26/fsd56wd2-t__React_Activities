@@ -5,16 +5,16 @@ import Card from './Card';
 
 const CyberSecurity = () => {
   return (
-    <div>
-       <div className="row">
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/CS_Card1.webp" title="Cybersecurity Vs Ethical Hacking: Top 10 Differences"/>
+    <div className="container">
+       <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2022/12/Yellow-Blue-Illustration-Business-Blog-Banner-2048x1152.png" title="Cybersecurity Vs Ethical Hacking: Top 10 Differences"/>
         </div>
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/CS_Card2.webp" title="8 Different Types of Cybersecurity and Threats Involved" />
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2022/11/Teal-Illustration-Digital-Business-Blog-Banner-1-2048x1152.png" title="8 Different Types of Cybersecurity and Threats Involved" />
         </div>
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/CS_Card3.webp" title="The Ultimate Cybersecurity Roadmap for Beginners" />
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2021/03/The-Ultimate-%E2%80%A8Cybersecurity-Roadmap-for-Beginners.webp" title="The Ultimate Cybersecurity Roadmap for Beginners" />
         </div>
       </div>
     </div>

@@ -5,16 +5,16 @@ import Card from './Card';
 
 const FullStackDevelopment = () => {
   return (
-    <div>
-      <div className="row">
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/FSD_Card1.webp" title="How Long Would It Take to Be a Full Stack Developer?" />
+    <div className="container">
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/07/how-long-it-would-it-take-to-learn-full-stack-development_-768x402.webp" className='responsive' title="How Long Would It Take to Be a Full Stack Developer?" />
         </div>
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/FSD_Card2.webp" title="7 Best Full-Stack Development Online Courses [2024]" />
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2023/08/Feature-image-Best-Full-Stack-Development-Online-Courses.webp" title="7 Best Full-Stack Development Online Courses [2024]" />
         </div>
-        <div className="col-md-4 col-sm-6">
-          <Card imageSrc="../src/assets/FSD_Card3.jpg" title="6 Essential Prerequisites For Learning ReactJS" />
+        <div className="col">
+          <Card imageSrc="https://www.guvi.in/blog/wp-content/uploads/2021/05/react-768x402.jpg" title="6 Essential Prerequisites For Learning ReactJS" />
         </div>
       </div>
     </div>
