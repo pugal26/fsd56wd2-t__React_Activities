@@ -4,7 +4,7 @@ import { useCart } from './CartContext';
 import { CartItem, TotalCartSummary } from './CartComponents';
 
 const CartPage = () => {
-  const { cartItems } = useCart();
+  const { cartItems, removeItemFromCart  } = useCart();
 
   const calculateSubTotal = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -16,6 +16,11 @@ const CartPage = () => {
     return subTotal + shipping;
   };
 
+   // Function to handle removal of items from cart
+   const handleRemoveItemClick = (itemId) => {
+    removeItemFromCart(itemId);
+  };
+
   return (
     <div className="container py-5">
       <div className="row justify-content-center">
@@ -24,7 +29,7 @@ const CartPage = () => {
             <div className="card-body">
               <h5 className="card-title">Order Summary</h5>
               {cartItems.map((item) => (
-                <CartItem key={item.id} item={item} />
+                <CartItem key={item.id} item={item}  onRemoveItemClick={handleRemoveItemClick} />
               ))}
             </div>
           </div>
